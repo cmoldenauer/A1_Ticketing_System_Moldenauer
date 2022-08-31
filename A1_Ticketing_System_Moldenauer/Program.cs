@@ -91,10 +91,8 @@
                                     break;
                                 }
                                 if (watchCount > 0)
-                                {
                                     watching += "|";
-                                }
-                                watching += watchingControl;
+                                watching += watchingControl;  //+ (watchCount > 0 ? "|" : "")
                                 watchCount++;
                             } while (watchingControl != "-1");
 
@@ -105,8 +103,8 @@
                             }
 
                             // write data from user
-                            sw.WriteLine("{0},{1},{2},{3},{4},{5},{6}", loop, summary, status, priority, submitter, assigned, watching);
-                            sw.WriteLine("{loop},");
+                            // sw.WriteLine("{0},{1},{2},{3},{4},{5},{6}", loop, summary, status, priority, submitter, assigned, watching);
+                            sw.WriteLine($"{loop},{summary},{status},{priority},{submitter},{assigned},{watching}");
 
                             loop++;
 
