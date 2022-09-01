@@ -20,7 +20,7 @@
                 // read response from user
                 choice = Console.ReadLine();
 
-                
+
                 switch (choice)
                 {
                     // read data from file
